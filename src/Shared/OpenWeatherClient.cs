@@ -53,7 +53,7 @@ public class OpenWeatherClient : IOpenWeatherClient
         // current,minutely,daily,alerts
         var urls = locations.Select(location => forecastUrl
                 .Replace("@AppId", appId)
-                .Replace("@Exclude", "hourly,minutely,daily,alerts")
+                .Replace("@Exclude", "current,minutely,daily,alerts")
                 .Replace("@Lat", location.Lat.ToString(CultureInfo.InvariantCulture))
                 .Replace("@Lon", location.Lon.ToString(CultureInfo.InvariantCulture)))
             .ToList();
