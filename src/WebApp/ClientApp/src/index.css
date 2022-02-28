@@ -1,0 +1,23 @@
+.uk-section {
+    padding-top: 0;
+}
+
+.uk-container-expand {
+    background-color: #f8f8f8;
+}
+
+.pointer-button {
+    cursor: pointer;
+}
+
+.footer {
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.react-time-picker__wrapper {
+    border: none !important;
+}

@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  uroskur:
+    image: ${DOCKER_REGISTRY-}uroskur:latest
+    build:
+      context: .
+      dockerfile: src/WebApp/Dockerfile
+    ports:
+      - "9000:80"
+      - "9001:443"
+    environment:
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=9001
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/uber_w_passwd.pfx
+      - ConnectionStrings__DefaultConnection=Data Source=C:/uroskur/uroskur.db
+      - Cache__CachePath=C:/uroskur/cache.db
+      - AppSettings__StravaCallbackUrl=http://changeit.changeit/api/v1/Strava/SubscriptionCallback/cf547d74-db54-44d8-ad1a-83caa67c89ef
+      - Authentication__Google__ClientId=
+      - Authentication__Google__ClientSecret=
+    volumes:
+      - E:/Certificates/uber_w_passwd.pfx:/https/uber_w_passwd.pfx:ro
