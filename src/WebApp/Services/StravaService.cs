@@ -73,11 +73,18 @@ public class StravaService : IStravaService
         var clientId = setting?.ClientId.ToString();
         var clientSecret = setting?.ClientSecret;
 
-        var response = await _stravaClient.CreateSubscriptionAsync(clientId, clientSecret);
+        try
+        {
+            var response = await _stravaClient.CreateSubscriptionAsync(clientId, clientSecret);
+            _logger.LogInformation("Subscription response: {}.", response);
+            return response;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+        }
 
-        _logger.LogInformation("Subscription response: {}.", response);
-
-        return response;
+        return string.Empty;
     }
 
     public async Task<bool?> DeleteSubscriptionAsync()
@@ -86,7 +93,16 @@ public class StravaService : IStravaService
         var clientId = setting?.ClientId.ToString();
         var clientSecret = setting?.ClientSecret;
 
-        return await _stravaClient.DeleteSubscriptionAsync(clientId, clientSecret);
+        try
+        {
+            return await _stravaClient.DeleteSubscriptionAsync(clientId, clientSecret);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+        }
+
+        return false;
     }
 
     public async Task<Subscription?> ViewSubscriptionAsync()
@@ -95,7 +111,16 @@ public class StravaService : IStravaService
         var clientId = setting?.ClientId.ToString();
         var clientSecret = setting?.ClientSecret;
 
-        return await _stravaClient.ViewSubscriptionAsync(clientId, clientSecret);
+        try
+        {
+            return await _stravaClient.ViewSubscriptionAsync(clientId, clientSecret);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+        }
+
+        return new Subscription();
     }
 
     public async Task<IEnumerable<Routes>> FindRoutesByAthleteIdAsync(long athleteId)
