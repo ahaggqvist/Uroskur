@@ -97,4 +97,4 @@ A docker image is available at [Docker Hub](https://hub.docker.com/r/ahaggqvist/
     docker pull ahaggqvist/uroskur:latest
 
 ## Database
-If you are not running the migrations from scratch to create the database you can download an empty database **uroskur.db**.
+If you are not running the migrations from scratch to create the database you can download an empty database **uroskur.db** that is included.
