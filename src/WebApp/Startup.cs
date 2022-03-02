@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,18 @@ public class Startup
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+        services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            options.ForwardedHeaders =
+                ForwardedHeaders.XForwardedFor |
+                ForwardedHeaders.XForwardedHost |
+                ForwardedHeaders.XForwardedProto;
+            options.ForwardLimit = 2; // Limit number of proxy hops trusted.
+            options.KnownNetworks.Clear();
+            options.KnownProxies.Clear();
+        });
+
+
         services.AddDbContext<DataContext>(optionsBuilder =>
         {
             //optionsBuilder.LogTo(message => Debug.WriteLine(message));
@@ -92,7 +105,14 @@ public class Startup
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-        app.UseHttpsRedirection();
+        app.UseForwardedHeaders();
+
+        var httpsRedirectEnabled =
+            Environment.GetEnvironmentVariable("ASPNETCORE_CUSTOM_HTTPS_REDIRECT") == "true";
+        if (httpsRedirectEnabled)
+        {
+            app.UseHttpsRedirection();
+        }
 
         app.UseStaticFiles();
 
@@ -120,7 +140,6 @@ public class Startup
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
                 config.UseProxyToSpaDevelopmentServer("https://localhost:3000");
             }
         });
