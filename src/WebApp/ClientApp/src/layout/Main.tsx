@@ -19,7 +19,7 @@ const Main: FC = () => {
         </h1>
         <p className="uk-article-meta">
           View the weather along your Strava routes to make every bike ride or
-          run enjoyable.
+          run enjoyable (or atleast make them suck less!).
         </p>
         {userService.user() ? (
           <div />
