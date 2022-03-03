@@ -55,7 +55,7 @@ Edit the appsettings.production.json file.
         "AllowedHosts": "*"
     }
 
-### Via docker
+### Docker
 Edit the docker-compose file (in the example below Uroskur is proxied by Traefik):
 
     version: "2.4"
