@@ -14,6 +14,8 @@ export interface ILocation {
     feels_like: number;
     temp: number;
     uvi: number;
+    pop: number;
+    clouds: number;
     wind_speed: number;
     wind_deg: number;
     weather: [
@@ -28,6 +30,8 @@ export interface ILocation {
   current: {
     temp: number;
     uvi: number;
+    pop: number;
+    clouds: number;
     feels_like: number;
     wind_speed: number;
     wind_deg: number;

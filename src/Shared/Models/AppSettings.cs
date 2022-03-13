@@ -10,8 +10,7 @@ public class AppSettings
 
     public string StravaGxpUrl { get; set; } = "https://www.strava.com/api/v3/routes/@RouteId/export_gpx";
 
-    public string StravaCallbackUrl { get; set; } =
-        "http://bd6f-2-248-148-113.ngrok.io/api/v1/Strava/SubscriptionCallback";
+    public string? StravaCallbackUrl { get; set; }
 
 
     public string? StravaClientId { get; set; }
