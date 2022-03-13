@@ -1,6 +1,11 @@
 # Uroskur
 ASP.NET application that fetches a 48-hour weather forecast from OpenWeather and routes from Strava to show the weather along your Strava routes. Authentication via Google.
 
+## Screenshots
+<img src="https://i.ibb.co/H44p4ST/main.png" alt="main" border="0">
+<img src="https://i.ibb.co/HtnwDpr/weather.png" alt="weather" border="0">
+<img src="https://i.ibb.co/4m55pGn/settings.png" alt="settings" border="0">
+
 ## How to use
 You will need a Strava account, a OpenWeather account and a Google account. Google is used for authentication, Strava for routes and OpenWeather for weather forecasts.
 
@@ -11,7 +16,7 @@ The process for creating a Strava API application is described on the Strava web
 Sign up for an account on https://openweathermap.org/. To configure Uroskur you need the OpenWeather **API key**.
 
 ### Google
-Follow the instructions on [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en "A"). To configure Uroskur you need the **Client ID** and **Client secret**. For example, if you deploy Uroskur at domain uroskur.700c.se set Authorized JavaScript origins to https://uroskur.700c.se and Authorized redirect URIs to https://uroskur.700c.se/signin-google.
+Follow the instructions on [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en "A"). To configure Uroskur you need the **Client ID** and **Client secret**. For example, if you deploy Uroskur at domain changeit.changeit set Authorized JavaScript origins to https://changeit.changeit and Authorized redirect URIs to https://changeit.changeit/signin-google.
 
 ### Configure Uroskur
 Configuration of Uroskur depends on how you deploy it.
@@ -50,7 +55,7 @@ Edit the appsettings.production.json file.
         "AllowedHosts": "*"
     }
 
-### Via docker
+### Docker
 Edit the docker-compose file (in the example below Uroskur is proxied by Traefik):
 
     version: "2.4"
