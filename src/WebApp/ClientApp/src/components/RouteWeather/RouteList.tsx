@@ -14,7 +14,7 @@ const RouteList: FC<TProps> = ({ locations, startTime, speed, day }) => {
     <table className="uk-table uk-table-divider">
       <thead>
         <tr>
-          <th className="uk-text-center">km (date)</th>
+          <th className="uk-text-center">km (date time)</th>
           <th className="uk-text-center">temp</th>
           <th className="uk-text-center">feels like</th>
           <th className="uk-text-center">m/s</th>

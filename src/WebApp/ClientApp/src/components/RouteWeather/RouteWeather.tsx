@@ -20,8 +20,7 @@ const RouteWeather: FC<IProps> = ({ onProgressHandler }) => {
   const [days, setDays] = useState<IOption[]>([]);
   const [startTime, setStartTime] = useState("");
   const [minTime, setMinTime] = useState("00:00:00");
-  const [forecastStart, setForecastStart] = useState("");
-  const [forecastEnd, setForecastEnd] = useState("");
+  const [forecastDates, setForecastDates] = useState("");
 
   const fetchRoutesCallback = useCallback(
     async (athleteId: number) => {
@@ -131,13 +130,14 @@ const RouteWeather: FC<IProps> = ({ onProgressHandler }) => {
               setMinTime(dtLocation.toFormat("HH"));
               setStartTime(dtLocation.toFormat("T"));
               setDay(dtLocation.toFormat("yyyyMMdd"));
-              setForecastStart(dtLocation.toFormat("ccc dd LLL T"));
-              setForecastEnd(
+
+              const forecastStart = dtLocation.toFormat("ccc d LLL T");
+              const forecastEnd =
                 DateTime.fromSeconds(locationsResponse?.data[0].hourly[47].dt)
                   .setZone(user?.timezone)
                   .setLocale(user?.locale)
-                  .toFormat("ccc dd LLL T")
-              );
+                  .toFormat("ccc d LLL T");
+              setForecastDates(`Forecast: ${forecastStart} - ${forecastEnd}`)
             }
           }
         }
@@ -221,7 +221,7 @@ const RouteWeather: FC<IProps> = ({ onProgressHandler }) => {
                 </div>
               </form>
               <p className="uk-text-meta">
-                Forecast between: {forecastStart} and {forecastEnd}
+                {forecastDates}
               </p>
               <div className="uk-card uk-card-default uk-card-body uk-margin-small-top">
                 <RouteList
