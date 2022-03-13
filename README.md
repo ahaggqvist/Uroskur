@@ -3,7 +3,8 @@ ASP.NET application that fetches a 48-hour weather forecast from OpenWeather and
 
 ## Screenshots
 <img src="https://i.ibb.co/H44p4ST/main.png" alt="main" border="0">
-<img src="https://i.ibb.co/HtnwDpr/weather.png" alt="weather" border="0">
+<img src="https://i.ibb.co/NTRnmLC/weather-1.png" alt="weather-1" border="0">
+<img src="https://i.ibb.co/vZbH5Xx/weather-2.png" alt="weather-2" border="0">
 <img src="https://i.ibb.co/4m55pGn/settings.png" alt="settings" border="0">
 
 ## How to use
