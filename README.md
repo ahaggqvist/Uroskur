@@ -1,5 +1,6 @@
 # Uroskur
-Uroskur fetches a forecast for the next 48 hours from OpenWeather and routes from Strava and shows the weather along your routes. User authentication is handled by Google.
+Uroskur fetches a forecast for the next 48 hours from OpenWeather and routes from Strava and displays the weather conditions along your route depending on your pace, 
+time of day and start date.
 
 ## Screenshots
 <img src="https://i.ibb.co/H44p4ST/main.png" alt="main" border="0">
