@@ -47,9 +47,9 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost]
-    public async Task Logout()
+    public Task Logout()
     {
-        await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+        return HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
     }
 
     [HttpGet]

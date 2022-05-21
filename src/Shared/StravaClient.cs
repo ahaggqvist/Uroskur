@@ -78,7 +78,7 @@ public class StravaClient : IStravaClient
 
         var response = await _httpClient.PostAsync(subscriptionUrl, formUrlEncodedContent);
         response.EnsureSuccessStatusCode();
-        return await response.Content.ReadAsStringAsync();
+        return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
     }
 
     public async Task<bool?> DeleteSubscriptionAsync(string? clientId, string? clientSecret)
@@ -254,8 +254,8 @@ public class StravaClient : IStravaClient
         return xml;
     }
 
-    private async Task<HttpResponseMessage> GetResponseAsync(HttpRequestMessage url)
+    private Task<HttpResponseMessage> GetResponseAsync(HttpRequestMessage url)
     {
-        return await _httpClient.SendAsync(url);
+        return _httpClient.SendAsync(url);
     }
 }

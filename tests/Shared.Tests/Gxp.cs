@@ -1,10 +1,10 @@
-﻿namespace Uroskur.Tests;
+﻿namespace Shared.Tests;
 
 public static class Gxp
 {
     public static string FileAsString()
     {
-      const string gxp = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+        const string gxp = @"<?xml version=""1.0"" encoding=""UTF-8""?>
 <gpx xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://www.topografix.com/GPX/1/1"" xmlns:gpxdata=""http://www.cluetrust.com/XML/GPXDATA/1/0"" xsi:schemaLocation=""http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd"" version=""1.1"" creator=""http://ridewithgps.com/"">
   <metadata>
     <name></name>
@@ -5891,6 +5891,6 @@ public static class Gxp
   </trk>
 </gpx>
 ";
-      return gxp;
+        return gxp;
     }
 }

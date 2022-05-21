@@ -5,8 +5,8 @@ namespace Uroskur.WebApp.Models;
 
 public class SettingModel
 {
-    private string? _clientSecret;
     private string? _appId;
+    private string? _clientSecret;
 
     [RegularExpression("^[a-zA-Z0-9]+$")]
     [Range(0, int.MaxValue, ErrorMessage = "Client ID must be a positive number.")]

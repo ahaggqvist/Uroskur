@@ -64,7 +64,7 @@ public class StravaService : IStravaService
             ExpiresAt = token.ExpiresAt
         };
 
-        return await _stravaUserRepository.UpsertAsync(stravaUser);
+        return await _stravaUserRepository.UpsertAsync(stravaUser).ConfigureAwait(false);
     }
 
     public async Task<string?> CreateSubscriptionAsync()
@@ -81,7 +81,7 @@ public class StravaService : IStravaService
         }
         catch (Exception e)
         {
-            _logger.LogError(e.Message);
+            _logger.LogError("Exception {}", e.Message);
         }
 
         return string.Empty;
@@ -99,7 +99,7 @@ public class StravaService : IStravaService
         }
         catch (Exception e)
         {
-            _logger.LogError(e.Message);
+            _logger.LogError("Exception {}", e.Message);
         }
 
         return false;
@@ -133,7 +133,7 @@ public class StravaService : IStravaService
         }
 
         var authorizationToken = await AuthorizationTokenByAthleteIdAsync(athleteId);
-        return await _stravaClient.GetRoutesAsync(athleteId, authorizationToken);
+        return await _stravaClient.GetRoutesAsync(athleteId, authorizationToken).ConfigureAwait(false);
     }
 
     public async Task<IEnumerable<Location>> FindLocationsByAthleteIdRouteIdAsync(long athleteId, long routeId)
@@ -228,7 +228,7 @@ public class StravaService : IStravaService
         var clientId = setting?.ClientId.ToString();
         var clientSecret = setting?.ClientSecret;
 
-        return await _stravaClient.GetRefreshTokenAsync(refreshToken, clientId, clientSecret);
+        return await _stravaClient.GetRefreshTokenAsync(refreshToken, clientId, clientSecret).ConfigureAwait(false);
     }
 
     private static bool IsTokenRefresh(long expiresAt)

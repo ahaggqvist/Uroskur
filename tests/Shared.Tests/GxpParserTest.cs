@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Uroskur.Shared;
 
-namespace Uroskur.Tests;
+namespace Shared.Tests;
 
 [TestClass]
 public class GxpParserTest

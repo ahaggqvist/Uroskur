@@ -6,8 +6,8 @@ namespace Uroskur.WebApp.Models;
 
 public class TokenExchangeModel
 {
-    private string? _mail;
     private string? _code;
+    private string? _mail;
 
     [FromRoute]
     [EmailAddress]

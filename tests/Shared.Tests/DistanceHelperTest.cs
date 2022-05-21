@@ -1,11 +1,9 @@
 using System;
-using System.IO;
 using System.Linq;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Uroskur.Shared;
 
-namespace Uroskur.Tests;
+namespace Shared.Tests;
 
 [TestClass]
 public class DistanceHelperTest

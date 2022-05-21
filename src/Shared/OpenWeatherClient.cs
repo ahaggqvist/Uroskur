@@ -114,8 +114,8 @@ public class OpenWeatherClient : IOpenWeatherClient
         return temperatures;
     }
 
-    private async Task<string> GetResponseAsync(string? url)
+    private Task<string> GetResponseAsync(string? url)
     {
-        return await _httpClient.GetStringAsync(url);
+        return _httpClient.GetStringAsync(url);
     }
 }

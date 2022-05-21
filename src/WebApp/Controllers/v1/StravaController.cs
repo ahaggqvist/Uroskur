@@ -30,7 +30,7 @@ public class StravaController : ControllerBase
     [AllowAnonymous]
     public IActionResult SubscriptionCallback([FromRoute] string? callbackUuid, [FromQuery] SubscriptionModel subscriptionModel)
     {
-        if (string.IsNullOrEmpty(callbackUuid) || !callbackUuid.Equals(callbackUuid))
+        if (IsNotValidCallbackUuid(callbackUuid))
         {
             return Unauthorized();
         }
@@ -44,7 +44,7 @@ public class StravaController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> SubscriptionCallbackAsync([FromRoute] string? callbackUuid, [FromBody] CallbackModel callbackModel)
     {
-        if (string.IsNullOrEmpty(callbackUuid) || !callbackUuid.Equals(callbackUuid))
+        if (IsNotValidCallbackUuid(callbackUuid))
         {
             return Unauthorized();
         }
@@ -134,5 +134,10 @@ public class StravaController : ControllerBase
     public async Task<IActionResult> StravaUserByAtleteId(long athleteId)
     {
         return Ok(await _stravaUserRepository.FindByAthleteIdAsync(athleteId));
+    }
+
+    private static bool IsNotValidCallbackUuid(string? callbackUuid)
+    {
+        return string.IsNullOrEmpty(callbackUuid) || !CallbackUuid.Equals(callbackUuid);
     }
 }

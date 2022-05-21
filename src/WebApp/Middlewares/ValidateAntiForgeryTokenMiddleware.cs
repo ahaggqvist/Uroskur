@@ -20,6 +20,6 @@ public class ValidateAntiForgeryTokenMiddleware
             await _antiforgery.ValidateRequestAsync(context);
         }
 
-        await _next(context);
+        await _next(context).ConfigureAwait(false);
     }
 }
