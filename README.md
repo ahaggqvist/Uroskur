@@ -1,7 +1,5 @@
 # Uroskur
-Uroskur fetches a forecast for the next 48 hours from OpenWeather and routes from Strava and shows the weather along your routes. Authentication via Google.
-
-ASP.NET Core with a React frontend.
+Uroskur fetches a forecast for the next 48 hours from OpenWeather and routes from Strava and shows the weather along your routes. User authentication is handled by Google.
 
 ## Screenshots
 <img src="https://i.ibb.co/H44p4ST/main.png" alt="main" border="0">
