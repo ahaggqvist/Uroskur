@@ -18,8 +18,7 @@ const Main: FC = () => {
           Uroskur
         </h1>
         <p className="uk-article-meta">
-          View the weather along your Strava routes to make every bike ride or
-          run enjoyable (or atleast make them suck less!).
+            Display the weather conditions along your Strava routes to make every bike ride or run enjoyable (or atleast make them suck less!).
         </p>
         {userService.user() ? (
           <div />
