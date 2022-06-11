@@ -2,9 +2,9 @@
 Uroskur fetches a forecast for the next 48 hours from OpenWeather and routes from Strava and displays the weather conditions along your route based upon your pace, time of day and start date.
 
 ## Screenshots
-<img src="https://i.ibb.co/H44p4ST/main.png" alt="main" border="0">
+<img src="https://i.ibb.co/dgMVRbK/main.png" alt="main" border="0">
+<img src="https://i.ibb.co/HNcJdc7/weather.png" alt="weather-2" border="0">
 <img src="https://i.ibb.co/NTRnmLC/weather-1.png" alt="weather-1" border="0">
-<img src="https://i.ibb.co/vZbH5Xx/weather-2.png" alt="weather-2" border="0">
 <img src="https://i.ibb.co/4m55pGn/settings.png" alt="settings" border="0">
 
 ## How to use
