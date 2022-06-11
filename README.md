@@ -11,7 +11,7 @@ Uroskur fetches a forecast for the next 48 hours from OpenWeather and routes fro
 You will need a Strava account, a OpenWeather account and a Google account. Google is used for authentication, Strava for routes and OpenWeather for weather forecasts.
 
 ### Strava
-The process for creating a Strava API application is described on the Strava website: https://developers.strava.com/docs/getting-started/. To configure Uroskur you need the **Client ID** and **Client Secret**. You will find these on the My API Application page under Settings.
+The process for creating a Strava API application is described on the Strava website. Follow the instructions on [Getting Started]( https://developers.strava.com/docs/getting-started/). To configure Uroskur you need the **Client ID** and **Client Secret**. You will find these on the My API Application page under Settings.
 
 ### OpenWeather
 Sign up for an account on https://openweathermap.org/. To configure Uroskur you need the OpenWeather **API key**.
