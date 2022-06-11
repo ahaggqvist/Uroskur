@@ -52,7 +52,7 @@ const RouteListItem: FC<TProps> = ({
                     <td>{`${DateTime.fromSeconds(seconds)
                         .setZone(user.timezone)
                         .setLocale(user.locale)
-                        .toFormat("T")} (${km})`}</td>
+                        .toFormat("T")}`}</td>
                     <td>{temp}</td>
                     <td>{feelsLike}</td>
                     <td>{pop}</td>

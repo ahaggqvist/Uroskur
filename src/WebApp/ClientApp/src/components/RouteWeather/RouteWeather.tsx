@@ -134,12 +134,7 @@ const RouteWeather: FC<IProps> = ({onProgressHandler}) => {
                             setDay(dtLocation.toFormat("yyyyMMdd"));
 
                             const forecastStart = dtLocation.toFormat("ccc d LLL T");
-                            const forecastEnd =
-                                DateTime.fromSeconds(locationsResponse?.data[0].hourly[47].dt)
-                                    .setZone(user?.timezone)
-                                    .setLocale(user?.locale)
-                                    .toFormat("ccc d LLL T");
-                            setForecastDates(`Forecast: ${forecastStart} - ${forecastEnd}`)
+                            setForecastDates(`OpenWeather Forecast Issued at ${forecastStart}`)
                         }
                     }
                 }
