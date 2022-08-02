@@ -1,5 +1,5 @@
 # Uroskur
-Uroskur fetches a forecast for the next 48 hours from OpenWeather and routes from Strava and displays the weather conditions along your route based upon your pace, time of day and start date.
+A ASP.NET app that fetches a forecast for the next 48 hours from OpenWeather and routes from Strava and displays the weather conditions along your route based upon your pace, time of day and start date.
 
 ## Screenshots
 <img src="https://i.ibb.co/dgMVRbK/main.png" alt="main" border="0">
